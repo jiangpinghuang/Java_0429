@@ -68,20 +68,22 @@ public class RCV {
 	}
 
 	public static void writeFile(String content) {
-		String filePath = "/Users/hjp/Downloads/rcv.txt";
-		content = content.substring(0, content.length() - 1);
-		content = content + " .";
-		content = content.replaceAll(", ", " , ");
-		content = content.replaceAll("!", " !");
-		content = content.replaceAll("/", " / ");
-		content = content.replaceAll("\"", " \" ");
-		try {
-			BufferedWriter writer = new BufferedWriter(new FileWriter(filePath, true));
-			writer.write(content + "\r\n");
-			writer.flush();
-			writer.close();
-		} catch (IOException e) {
-			e.printStackTrace();
+		if (!content.contains("  ")) {
+			String filePath = "/Users/hjp/Downloads/rcv.txt";
+			content = content.substring(0, content.length() - 1);
+			content = content + " .";
+			content = content.replaceAll(", ", " , ");
+			content = content.replaceAll("!", " !");
+			content = content.replaceAll("/", " / ");
+			content = content.replaceAll("\"", " \" ");
+			try {
+				BufferedWriter writer = new BufferedWriter(new FileWriter(filePath, true));
+				writer.write(content + "\r\n");
+				writer.flush();
+				writer.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 
