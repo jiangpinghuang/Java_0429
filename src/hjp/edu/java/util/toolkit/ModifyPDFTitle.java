@@ -17,7 +17,7 @@ import org.apache.pdfbox.pdmodel.PDDocumentInformation;
 public class ModifyPDFTitle {
 
 	public static void main(String[] args) {
-		String pdfDir = "/your/pdf/path";
+		String pdfDir = "/Users/hjp/Downloads/";
 		listFile(pdfDir);
 	}
 
@@ -56,7 +56,7 @@ public class ModifyPDFTitle {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-			title = title + ".pdf";
+			title = title + "(AAAI2017).pdf";
 			renameFile(filePath, title);
 		}
 	}
